@@ -1,0 +1,129 @@
+let = valeur qui change
+const = valeur qui change pas
+
+pour copier un tableau c'est let variable = [...variable3];
+
+=== ou !== pour egalité
+
+Acceder valeur tableau = []
+add valeur = push("valeur")
+supprimer = pop()
+
+Acceder valeur Objet( {} ) = Objet.nomAttribut
+add valeur = Objet.nomAttribut = Valeur
+
+exemple :
+
+let monPersonnage = {
+nom: "Wayne",
+prenom: "Bruce",
+age: 35,
+couleurPreferee: "noir",
+hobbies: "sortir la nuit"
+}
+
+Acceder a un element
+
+document.getElementybyID pour avoir l'element( balise) ou document.querySelector
+let truc.id = "truc" ou let baliseImage = document.getElementById("premiereImage");  
+baliseImage.setAttribute("alt", "Ceci est la nouvelle valeur de alt");
+ou
+let baliseImage = document.getElementById("premiereImage");
+baliseImage.setAttribute("alt", "Ceci est une image de test modifiée");
+baliseImage.src = "cheminImage.jpg";
+baliseImage.classList.add("nouvelleClasse")
+baliseImage.classList.remove("photo")           pour ajouter des class sand des balise
+
+cree un element
+
+let nouvelElement = document.createElement("div");
+
+// Récupérer un élément parent existant
+let parentElement = document.getElementById("conteneur");
+
+// Ajouter le nouvel élément au parent
+parentElement.appendChild(nouvelElement);
+
+let contenuTitre = "Azertype"
+let contenuParagraphe = "L'application pour apprendre à taper plus vite !"
+
+// Création d'un div avec createElement. Dans cette div, on va créer un titre h1 et un paragraphe p
+let nouvelleDiv = document.createElement("div")
+let nouveauTitre = document.createElement("h1")
+let nouveauParagraphe = document.createElement("p")
+
+// On ajoute du texte dans le titre et le paragraphe
+nouveauTitre.textContent = contenuTitre
+nouveauParagraphe.textContent = contenuParagraphe
+
+ou si l'element existe deja c'est innerText
+
+ou 
+
+let contenuTitre = "Azertype"
+let contenuParagraphe = "L'application pour apprendre à taper plus vite !"
+
+let div = `
+    <div>
+        <h1>${contenuTitre}</h1>
+        <p>${contenuParagraphe}</p>
+    </div>
+    `;
+
+let body = document.querySelector("body")
+body.innerHTML = div
+
+monBouton.addEventListener("click", () => {
+    console.log("Vous avez cliqué sur le bouton")
+});
+
+ou
+
+document.addEventListener('keydown', (event) => {
+    console.log(event.key);
+});
+
+event.target : renvoie l’élément HTML qui a déclenché l’événement ;
+
+event.key : la touche appuyée quand l’événement écouté est lié au clavier ;
+
+event.clientX et event.clientY : les coordonnées de la souris quand l’événement écouté est lié à la souris.
+
+
+La balise select permet de créer une liste déroulante où l'utilisateur peut sélectionner une option à partir d'une liste prédéfinie d'options. La liste d'options est définie à l'aide de balises option imbriquées à l'intérieur de la balise select.
+
+Voici un exemple de champ select :
+
+<select id="films" name="films">
+    <option value="batman">Batman</option>
+    <option value="seigneur-des-anneaux">Le seigneur des anneaux</option>
+    <option value="titanic">Titanic</option>
+</select>
+
+
+Les balises input (“entrée”, en français) forment le cœur des formulaires. Elles permettent à l’utilisateur de saisir des données.
+D’ailleurs, nous en avons déjà utilisé une dans notre projet. 
+Eh oui, rappelez-vous, c’est grâce à cela que le joueur peut maintenant saisir le mot qu’il doit recopier.
+
+<input type="text" id="inputEcriture" name="inputEcriture">
+
+
+
+<input type="text" id="nom" name="nom">
+let baliseNom = document.getElementById("nom")
+let nom = baliseNom.value
+console.log(nom); // affiche ce qui est contenu dans la balise name
+
+Cette méthode fonctionne pour la plupart des balises :
+
+input de type texte, numérique, e-mail, mot de passe, textarea, select
+
+
+
+<input type="checkbox" id="accepter" name="accepter">
+
+let baliseAccepter = document.getElementById("accepter")
+let accepter = baliseAccepter.checked
+console.log(accepter); // affiche true ou false
+
+event.preventDefault() = evite le rechargement de la page
